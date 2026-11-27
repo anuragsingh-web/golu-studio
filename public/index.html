@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Golu Studio</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%237b6cff'/><text x='32' y='45' font-size='36' text-anchor='middle' fill='white' font-family='Arial' font-weight='900'>G</text></svg>">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="bg-glow"></div>
+<header class="topbar">
+  <a class="brand" href="#/">
+    <div class="logo-cube"><span>G</span></div>
+    <div><div class="brand-name">Golu Studio</div><div class="brand-sub" id="dataInfo">Loading Pintu ratings…</div></div>
+  </a>
+  <div class="top-actions">
+    <a class="btn primary rate-btn" href="#/rate" title="Upload any game, build, video or doc and get Pintu's v2 rating">⭐ Rate My Game<span class="count-badge" id="ratedCount" hidden></span></a>
+    <span class="chip" id="providerChip">…</span>
+    <button class="icon-btn" id="settingsBtn" title="Settings">⚙️</button>
+  </div>
+</header>
+<main id="app"></main>
+<div id="toast" class="toast"></div>
+
+<dialog id="settings">
+  <form method="dialog" class="settings-card">
+    <h2>Settings</h2>
+    <p class="muted">Keys are stored only in this browser (localStorage) and sent to your local Golu server per request. A key in the app's <code>.env</code> file works too.</p>
+    <label>AI provider
+      <select id="sProvider"><option value="cursor-agent">Cursor subscription via Cursor CLI (default, no API key)</option><option value="claude-code">Claude subscription via Claude Code CLI</option><option value="anthropic">Anthropic API key</option><option value="gemini">Google Gemini API key (optional)</option></select>
+    </label>
+    <label>Anthropic API key <span class="muted small">(only for the "Anthropic API key" provider)</span><input id="sAnthropic" type="password" autocomplete="off" placeholder="sk-ant-… (leave blank to use .env)"></label>
+    <label>Gemini API key <input id="sGemini" type="password" autocomplete="off" placeholder="optional"></label>
+    <div class="row2">
+      <label>Text model <input id="sText" list="modelList" placeholder="auto (newest Claude Sonnet)"></label>
+      <label>Code (H5) model <input id="sCode" list="modelList" placeholder="auto (newest Claude Opus)"></label>
+    </div>
+    <datalist id="modelList"></datalist>
+    <label class="check"><input id="sMock" type="checkbox"> Demo mode (offline mock content, no API calls)</label>
+    <div id="sStatus" class="muted small"></div>
+    <div class="dlg-actions"><button value="cancel" class="btn ghost">Close</button><button id="sSave" value="ok" class="btn primary">Save</button></div>
+  </form>
+</dialog>
+<script src="app.js"></script>
+</body>
+</html>

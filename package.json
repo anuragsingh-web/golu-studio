@@ -1,0 +1,28 @@
+{
+  "name": "golu-studio",
+  "version": "1.0.0",
+  "description": "Golu Studio - game ideation studio: Pintu ratings shelf -> themes -> mechanic merge -> Gemini mockups -> playable H5",
+  "main": "server.js",
+  "private": true,
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "mock": "node scripts/run-mock.js",
+    "icons": "node scripts/fetch-icons.js",
+    "update-data": "node scripts/update-data.js",
+    "autopilot": "node scripts/autopilot.js"
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "express": "^4.21.2",
+    "extract-zip": "^2.0.1",
+    "gifenc": "^1.0.3",
+    "multer": "^2.5.0",
+    "puppeteer-core": "^23.11.1",
+    "sharp": "^0.33.5",
+    "yauzl": "^2.10.0"
+  }
+}

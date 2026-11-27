@@ -1,0 +1,12 @@
+node_modules/
+.env
+data/icons/
+data/cache/
+data/ideas/
+screenshots/
+data/*.prev.json
+*.tar.gz
+data/rated-games/
+data/rated_games.json
+# Local Create H5 builds from `npm start`. Kept nightly games live in gallery/games/.
+games/

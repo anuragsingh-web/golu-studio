@@ -1,0 +1,13 @@
+node_modules
+.env
+.git
+.gitignore
+data/cache
+data/ideas
+data/*.prev.json
+games/*
+screenshots
+*.tar.gz
+.DS_Store
+data/rated-games
+data/rated_games.json

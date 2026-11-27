@@ -1,0 +1,604 @@
+{
+ "version": 2,
+ "archetypes": {
+  "sort_tap": {
+   "input": "tap_simple",
+   "hook": 8,
+   "mon": 8,
+   "feas": 7,
+   "wave": 5,
+   "saturated": true,
+   "depth": 7,
+   "why": "Tap-to-move sort: goal readable in 3 s, fair fails; huge 2025-26 sort wave"
+  },
+  "jam_tap": {
+   "input": "tap_simple",
+   "hook": 9,
+   "mon": 8,
+   "feas": 7,
+   "wave": 5,
+   "saturated": true,
+   "depth": 7,
+   "why": "Tap vehicles/people out of a jam: instant read, strong near-miss retry; bus/car jam clones in the hundreds"
+  },
+  "loop_tap": {
+   "input": "tap_simple",
+   "hook": 8,
+   "mon": 7,
+   "feas": 8,
+   "wave": 7,
+   "saturated": false,
+   "depth": 6,
+   "why": "Tap items onto a moving loop/conveyor: newer 2025-26 twist on jam/sort, still few top entrants"
+  },
+  "arrow_tap": {
+   "input": "tap_simple",
+   "hook": 8,
+   "mon": 5,
+   "feas": 9,
+   "wave": 6,
+   "saturated": false,
+   "depth": 6,
+   "why": "Tap arrows to escape the grid: one-gesture logic, cheap to build; wave now mid-to-late with many copies"
+  },
+  "yarn_tap": {
+   "input": "tap_simple",
+   "hook": 8,
+   "mon": 8,
+   "feas": 7,
+   "wave": 5,
+   "saturated": true,
+   "depth": 7,
+   "why": "Tap-to-sort yarn/rope: satisfying unwind; 280+ wool/knit releases in Jan-Jul 2025"
+  },
+  "screw_tap": {
+   "input": "tap_simple",
+   "hook": 8,
+   "mon": 8,
+   "feas": 7,
+   "wave": 5,
+   "saturated": true,
+   "depth": 7,
+   "why": "Tap screws/bolts off a board: clear goal, continue-friendly; screw genre saturated"
+  },
+  "pixel_tap": {
+   "input": "tap_simple",
+   "hook": 9,
+   "mon": 9,
+   "feas": 6,
+   "wave": 7,
+   "saturated": false,
+   "depth": 7,
+   "why": "Tap shooters/gems to fill pixel art: picture payoff sells the ad; Pixel Flow-style wave is young"
+  },
+  "blast_tap": {
+   "input": "tap_simple",
+   "hook": 8,
+   "mon": 9,
+   "feas": 5,
+   "wave": 4,
+   "saturated": true,
+   "depth": 8,
+   "why": "Tap-to-blast colour groups: easiest input, deep IAP; blast genre crowded by big publishers"
+  },
+  "tile_tap": {
+   "input": "tap_simple",
+   "hook": 8,
+   "mon": 8,
+   "feas": 7,
+   "wave": 4,
+   "saturated": true,
+   "depth": 7,
+   "why": "Tap tiles/items into a triple tray: instant read; triple-match is saturated"
+  },
+  "logic_tap": {
+   "input": "tap_complex",
+   "hook": 6,
+   "mon": 6,
+   "feas": 8,
+   "wave": 7,
+   "saturated": false,
+   "depth": 8,
+   "why": "Tap-only logic grid: simple input but needs thinking, weaker 3-second hook; cosy-logic (doku) wave is early"
+  },
+  "word_tap": {
+   "input": "tap_complex",
+   "hook": 5,
+   "mon": 6,
+   "feas": 8,
+   "wave": 4,
+   "saturated": false,
+   "depth": 7,
+   "why": "Tap letters/tiles to make words: literate, slower hook; mature word genre"
+  },
+  "rotate_tap": {
+   "input": "tap_simple",
+   "hook": 7,
+   "mon": 6,
+   "feas": 8,
+   "wave": 7,
+   "saturated": false,
+   "depth": 6,
+   "why": "Tap to rotate rings into place: one gesture, clear goal; young format"
+  },
+  "riddle_multi": {
+   "input": "multi",
+   "hook": 8,
+   "mon": 6,
+   "feas": 6,
+   "wave": 4,
+   "saturated": false,
+   "depth": 5,
+   "why": "Trick riddles mix tap, drag, tilt and swipe per level: funny hook but 3+ input types"
+  },
+  "block_drag": {
+   "input": "drag",
+   "hook": 8,
+   "mon": 5,
+   "feas": 8,
+   "wave": 4,
+   "saturated": true,
+   "depth": 7,
+   "why": "Drag pieces onto a grid: classic one-gesture block puzzle; hundreds of clones, ad-led monetisation"
+  },
+  "slide_drag": {
+   "input": "drag",
+   "hook": 8,
+   "mon": 8,
+   "feas": 7,
+   "wave": 6,
+   "saturated": false,
+   "depth": 7,
+   "why": "Slide coloured blocks out of the board (Color Block Jam style): drag-only, proven block+jam combo"
+  },
+  "goods_drag": {
+   "input": "drag",
+   "hook": 8,
+   "mon": 7,
+   "feas": 7,
+   "wave": 5,
+   "saturated": true,
+   "depth": 7,
+   "why": "Drag goods between shelves to triple-match: tidy-up appeal; goods-sort clones are everywhere"
+  },
+  "hex_drag": {
+   "input": "drag",
+   "hook": 7,
+   "mon": 7,
+   "feas": 7,
+   "wave": 4,
+   "saturated": true,
+   "depth": 7,
+   "why": "Drag hex stacks to merge colours: satisfying but saturated hexa-sort"
+  },
+  "sand_drag": {
+   "input": "drag",
+   "hook": 9,
+   "mon": 7,
+   "feas": 5,
+   "wave": 7,
+   "saturated": false,
+   "depth": 6,
+   "why": "Drag blocks that melt into sand: very ad-able physics payoff; sand wave still early",
+   "mashup": {
+    "mechanics": [
+     "block puzzle",
+     "sand physics"
+    ],
+    "checks": [
+     2,
+     2,
+     2,
+     2,
+     2
+    ]
+   }
+  },
+  "hole_drag": {
+   "input": "drag",
+   "hook": 9,
+   "mon": 7,
+   "feas": 6,
+   "wave": 5,
+   "saturated": true,
+   "depth": 6,
+   "why": "Drag a hole to swallow the world: iconic hook; 215 hole clones in Jan-Jul 2025"
+  },
+  "io_drag": {
+   "input": "swipe",
+   "hook": 8,
+   "mon": 5,
+   "feas": 6,
+   "wave": 3,
+   "saturated": true,
+   "depth": 5,
+   "why": "Swipe to steer and claim territory: instant hook, ad-led, very mature .io format"
+  },
+  "runner_swipe": {
+   "input": "swipe",
+   "hook": 9,
+   "mon": 6,
+   "feas": 3,
+   "wave": 3,
+   "saturated": true,
+   "depth": 8,
+   "why": "Swipe-only endless runner: great hook, but heavy 3D production and a saturated genre"
+  },
+  "rhythm_tap": {
+   "input": "tap_complex",
+   "hook": 9,
+   "mon": 7,
+   "feas": 5,
+   "wave": 3,
+   "saturated": false,
+   "depth": 6,
+   "why": "Tap to the beat: instant hook but timing skill; music licensing raises cost"
+  },
+  "physics_tap": {
+   "input": "tap_complex",
+   "hook": 8,
+   "mon": 7,
+   "feas": 6,
+   "wave": 6,
+   "saturated": false,
+   "depth": 6,
+   "why": "Tap to trigger physics smashes: satisfying destruction, aim/timing adds complexity"
+  },
+  "match3_swipe": {
+   "input": "swipe",
+   "hook": 8,
+   "mon": 10,
+   "feas": 2,
+   "wave": 3,
+   "saturated": true,
+   "depth": 9,
+   "why": "Swipe-to-swap match-3: proven IAP depth, but huge live-ops cost and a market owned by King/Dream/Playrix"
+  },
+  "match3_meta": {
+   "input": "swipe",
+   "hook": 8,
+   "mon": 10,
+   "feas": 2,
+   "wave": 3,
+   "saturated": true,
+   "depth": 9,
+   "why": "Swipe match-3 feeding a decorate/build meta: deepest monetisation, very expensive to compete",
+   "mashup": {
+    "mechanics": [
+     "match-3",
+     "decorate/build meta"
+    ],
+    "checks": [
+     2,
+     1,
+     2,
+     2,
+     1
+    ]
+   }
+  },
+  "merge2": {
+   "input": "drag_merge",
+   "hook": 6,
+   "mon": 9,
+   "feas": 3,
+   "wave": 4,
+   "saturated": true,
+   "depth": 9,
+   "why": "Merge-2: tap generators plus drag-to-merge on the core board (one drag-to-merge input, no cap); strong IAP but costly content",
+   "mashup": {
+    "mechanics": [
+     "merge-2",
+     "story/build meta"
+    ],
+    "checks": [
+     2,
+     2,
+     2,
+     2,
+     1
+    ]
+   }
+  },
+  "mahjong_tap": {
+   "input": "tap_complex",
+   "hook": 5,
+   "mon": 5,
+   "feas": 8,
+   "wave": 2,
+   "saturated": true,
+   "depth": 6,
+   "why": "Tap matching pairs: easy input, needs scanning; classic, no growth wave"
+  },
+  "classic_board": {
+   "input": "tap_complex",
+   "hook": 4,
+   "mon": 3,
+   "feas": 6,
+   "wave": 2,
+   "saturated": true,
+   "depth": 5,
+   "why": "Classic board game: tap-only but no twist to own; theme and monetisation are thin"
+  },
+  "hidden_tap": {
+   "input": "tap_complex",
+   "hook": 6,
+   "mon": 6,
+   "feas": 6,
+   "wave": 4,
+   "saturated": false,
+   "depth": 6,
+   "why": "Tap to find hidden objects: simple input, slower 3-second read; art-heavy content"
+  },
+  "color_tap": {
+   "input": "tap_simple",
+   "hook": 6,
+   "mon": 5,
+   "feas": 8,
+   "wave": 4,
+   "saturated": true,
+   "depth": 5,
+   "why": "Tap-to-colour by number: zero learning curve, relaxing; low retry tension"
+  },
+  "bubble_tap": {
+   "input": "tap_complex",
+   "hook": 7,
+   "mon": 6,
+   "feas": 8,
+   "wave": 2,
+   "saturated": true,
+   "depth": 6,
+   "why": "Aim-and-tap bubble shooter: one gesture with aiming; old saturated genre"
+  },
+  "snake_swipe": {
+   "input": "swipe",
+   "hook": 8,
+   "mon": 4,
+   "feas": 9,
+   "wave": 4,
+   "saturated": false,
+   "depth": 5,
+   "why": "Swipe a stretching cat to fill the board: elegant one-gesture puzzle, cheap to build"
+  },
+  "asmr_multi": {
+   "input": "multi",
+   "hook": 9,
+   "mon": 4,
+   "feas": 6,
+   "wave": 8,
+   "saturated": false,
+   "depth": 3,
+   "why": "ASMR toy/unboxing: very satisfying ad hook, but each toy uses a different gesture (tap, drag, swipe, hold) and depth is thin"
+  },
+  "minigame_multi": {
+   "input": "multi",
+   "hook": 6,
+   "mon": 4,
+   "feas": 5,
+   "wave": 6,
+   "saturated": false,
+   "depth": 4,
+   "why": "Bundle of mini-games with different controls: broad appeal but no single core loop"
+  },
+  "idle_tap": {
+   "input": "tap_simple",
+   "hook": 6,
+   "mon": 6,
+   "feas": 7,
+   "wave": 4,
+   "saturated": true,
+   "depth": 6,
+   "why": "Tap-to-earn idle clicker: easiest input, slow hook, ad/IAP friendly"
+  },
+  "cash_skill": {
+   "input": "tap_complex",
+   "hook": 5,
+   "mon": 3,
+   "feas": 2,
+   "wave": 4,
+   "saturated": false,
+   "depth": 6,
+   "why": "Real-money skill tournaments: regulated, payments and anti-fraud make it a poor fit for us"
+  },
+  "social_casino": {
+   "input": "tap_simple",
+   "hook": 7,
+   "mon": 10,
+   "feas": 2,
+   "wave": 3,
+   "saturated": true,
+   "depth": 8,
+   "why": "Tap-to-spin social casino with a build meta: huge IAP, but big-budget UA and regulation risk",
+   "mashup": {
+    "mechanics": [
+     "slot/dice spin",
+     "village/board build"
+    ],
+    "checks": [
+     2,
+     2,
+     1,
+     2,
+     2
+    ]
+   }
+  },
+  "drop_tap": {
+   "input": "tap_simple",
+   "hook": 8,
+   "mon": 6,
+   "feas": 8,
+   "wave": 6,
+   "saturated": false,
+   "depth": 4,
+   "why": "Tap to drop coins/balls and watch them bounce: plinko-style payoff, shallow progression"
+  },
+  "flip_tap": {
+   "input": "tap_simple",
+   "hook": 8,
+   "mon": 4,
+   "feas": 8,
+   "wave": 2,
+   "saturated": true,
+   "depth": 3,
+   "why": "One-tap timing flip: hypercasual hook, thin depth and ad-only economy"
+  },
+  "aim_drag": {
+   "input": "drag",
+   "hook": 6,
+   "mon": 4,
+   "feas": 6,
+   "wave": 3,
+   "saturated": true,
+   "depth": 3,
+   "why": "Drag to aim and shoot: simple but generic duel shooter"
+  },
+  "cube3d": {
+   "input": "tap_swipe",
+   "hook": 8,
+   "mon": 7,
+   "feas": 6,
+   "wave": 5,
+   "saturated": false,
+   "depth": 6,
+   "why": "Tap cubes away but swipe to rotate the 3D shape: distinct tap AND swipe are both core, so capped"
+  },
+  "adventure_multi": {
+   "input": "multi",
+   "hook": 7,
+   "mon": 6,
+   "feas": 2,
+   "wave": 3,
+   "saturated": false,
+   "depth": 5,
+   "why": "3D adventure with joystick plus tap actions: multi-input, IP-led, expensive"
+  },
+  "licensed_kids": {
+   "input": "multi",
+   "hook": 5,
+   "mon": 6,
+   "feas": 2,
+   "wave": 2,
+   "saturated": false,
+   "depth": 5,
+   "why": "Licensed kids playground: many gestures, value comes from the IP not the mechanic"
+  },
+  "farm_multi": {
+   "input": "multi",
+   "hook": 6,
+   "mon": 9,
+   "feas": 2,
+   "wave": 2,
+   "saturated": true,
+   "depth": 9,
+   "why": "Farm/town builder: tap to build plus swipe to harvest and pan; deep but very costly",
+   "mashup": {
+    "mechanics": [
+     "farm sim",
+     "town build",
+     "match-3 mini levels"
+    ],
+    "checks": [
+     1,
+     0,
+     2,
+     2,
+     1
+    ]
+   }
+  },
+  "pvp_match3": {
+   "input": "swipe",
+   "hook": 6,
+   "mon": 6,
+   "feas": 3,
+   "wave": 2,
+   "saturated": true,
+   "depth": 7,
+   "why": "Swipe match-3 with PvP battles: two cores compete for attention",
+   "mashup": {
+    "mechanics": [
+     "match-3",
+     "PvP RPG battles"
+    ],
+    "checks": [
+     1,
+     2,
+     1,
+     1,
+     1
+    ]
+   }
+  },
+  "itch_platformer": {
+   "input": "multi",
+   "hook": 4,
+   "mon": 2,
+   "feas": 5,
+   "wave": 3,
+   "saturated": false,
+   "depth": 3,
+   "why": "Keyboard platformer/action puzzle (move + jump + action): 3+ inputs, not a mobile fit"
+  },
+  "itch_grid": {
+   "input": "swipe",
+   "hook": 5,
+   "mon": 3,
+   "feas": 7,
+   "wave": 3,
+   "saturated": false,
+   "depth": 4,
+   "why": "Grid-move puzzle (arrow keys/swipe only): clean single input, niche hook"
+  },
+  "itch_logic": {
+   "input": "tap_complex",
+   "hook": 4,
+   "mon": 3,
+   "feas": 7,
+   "wave": 4,
+   "saturated": false,
+   "depth": 5,
+   "why": "Tap-only logic puzzle (nonogram/deduction): simple input, slow hook"
+  },
+  "itch_tap": {
+   "input": "tap_simple",
+   "hook": 5,
+   "mon": 3,
+   "feas": 8,
+   "wave": 3,
+   "saturated": false,
+   "depth": 3,
+   "why": "One-tap arcade/luck toy: easiest input, little depth"
+  },
+  "itch_drag": {
+   "input": "drag",
+   "hook": 5,
+   "mon": 3,
+   "feas": 7,
+   "wave": 3,
+   "saturated": false,
+   "depth": 4,
+   "why": "Drag-to-place puzzle: single gesture, niche concept"
+  },
+  "itch_story": {
+   "input": "tap_complex",
+   "hook": 3,
+   "mon": 2,
+   "feas": 6,
+   "wave": 2,
+   "saturated": false,
+   "depth": 3,
+   "why": "Point-and-click story/sim: tap-only, but the joke or story is the product"
+  },
+  "itch_merge": {
+   "input": "drag",
+   "hook": 5,
+   "mon": 4,
+   "feas": 7,
+   "wave": 4,
+   "saturated": false,
+   "depth": 5,
+   "why": "Small merge puzzle: drag-only, proven loop in miniature"
+  }
+ }
+}

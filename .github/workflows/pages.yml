@@ -1,0 +1,40 @@
+# Publishes gallery/ to GitHub Pages on ordinary pushes (and when someone
+# re-runs this workflow). The nightly job deploys itself, because a commit
+# pushed with GITHUB_TOKEN does not start another workflow.
+
+name: Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'gallery/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Upload gallery
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: gallery
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
