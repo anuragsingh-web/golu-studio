@@ -1,0 +1,14 @@
+# Golu Studio — Render Blueprint.
+# In the Render Dashboard: New → Blueprint, then point at the GitHub repo that contains this file.
+# You will be prompted for CURSOR_API_KEY and APP_PASSWORD (not stored in this file).
+services:
+  - type: web
+    name: golu-studio
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: CURSOR_API_KEY
+        sync: false
+      - key: APP_PASSWORD
+        sync: false

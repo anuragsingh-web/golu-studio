@@ -1,0 +1,409 @@
+<cursor_untrusted_data_1337 source="ReadCanvas">
+
+Canvas "Ideation Mood Board, Week of 16 Nov 2026" (https://cursor.com/canvas/store-4e1a0859-bb19-4232-9a9c-19f6c46c7184/a2684784-55e6-4368-859e-6862847b5b4c):
+
+import { Page, Section, Text, Metrics, Grid, Image, Scatter, Bars, Columns, Pie, Table, Segmented, Select, Input, Rows, Callout, Properties, useState, useMemo, useGrokTheme } from "grok/canvas";
+
+type Card = { name: string; platform?: string; developer?: string; url?: string; overall: number; momentum?: number; staying?: number; size?: number; hook?: number; monetisation?: number; theme?: number; feasibility?: number; mashup?: number; input?: string; cap?: string; confidence?: string; why?: string; themeIdeas?: string; ageDays?: number; ratedOn?: string; family?: string; familyWhy?: string; saturated?: boolean; mechanics?: string[]; dl30?: number; dlGrowth?: number; rev30?: number; dau?: number; metrics?: string; unique?: string; perf?: string; icon?: string };
+type RowT = [string, string, number, number, number, number, string, string, number | null, number | null, string];
+type MoodData = {
+  weekStart: string; generatedAt: string; ratingsUpdatedAt: string;
+  stats: { tracked: number; new_this_week: number; avg_overall: number; median_overall: number; st_matched: number; confidence: Record<string, number>; added_by_day: Record<string, number>; top_mover: { name: string; dlGrowth: number; id: string } | null };
+  rules: { new_max_age: number; new_min_overall: number; new_min_hook: number; up_min_momentum: number; up_size: [number, number]; ng_min_wave: number; ng_min_mashup: number; ng_min_momentum: number; ng_min_overall: number; ng_min_hook: number; ng_min_feas: number; ng_casual: string[] };
+  buckets: { new: string[]; up: string[]; newGenre: string[] };
+  picks: string[];
+  trending: { rising_count: number; families: [string, number, number, boolean | null][]; inputs: [string, number][]; mechanics: [string, number][]; themes: [string, string, number | null][] };
+  cards: Record<string, Card>;
+  rows: RowT[];
+};
+
+// DATA:BEGIN (regenerate with: python3 /workspace/golu-studio/scripts/moodboard-data.py, then replace this one line)
+const DATA: MoodData = {"weekStart":"2026-11-16","generatedAt":"2026-11-18T11:03+00:00","ratingsUpdatedAt":"2026-11-18T13:17:50+05:30","stats":{"tracked":171,"new_this_week":40,"avg_overall":5.2,"median_overall":5.0,"st_matched":55,"confidence":{"medium":41,"high":60,"low":70},"added_by_day":{"2026-11-13":95,"2026-11-14":18,"2026-11-15":18,"2026-11-16":18,"2026-11-17":12,"2026-11-18":10},"top_mover":{"name":"Sort Streak: Color Puzzle","dlGrowth":117.17,"id":"and:com.oakever.sortparade"}},"rules":{"new_max_age":90,"new_min_overall":6.0,"new_min_hook":7.0,"up_min_momentum":7.0,"up_size":[4.0,8.0],"ng_min_wave":6,"ng_min_mashup":8,"ng_min_momentum":6.5,"ng_min_overall":6.0,"ng_min_hook":7.0,"ng_min_feas":5,"ng_casual":["3D adventure","Bubble shooter","Cash skill","Classic board","Colour by number","Farm / town","Hidden object","Idle","Licensed kids","Mahjong","Merge-2","Social casino","Word"]},"buckets":{"new":["and:com.loop.packedloop","and:com.gl.unbolt","and:com.oakever.sortparade","and:com.nebula.ropesort","and:com.gl.bus","and:com.blockblast.lite","and:com.gamefactory.roomsort"],"up":["and:com.fidget.dumplingparty","and:com.RC67.surprise.dumpling.ASMR.box","ios:6793924927","and:com.mimik.challenge.fun","ios:6783815362","ios:6757140488","cg:screw-out-bolts-and-nuts"],"newGenre":["and:bus.sand.fall.jam.loop.traffic.flow","ios:6751056652","ios:6761760135","ios:6752672568","and:com.mobsmile.coinbounce","ios:6758326278"]},"picks":["and:com.loop.packedloop","ios:6793924927","ios:6757140488"],"trending":{"rising_count":23,"families":[["Merge-2",3,7.6,true],["ASMR toy",3,8.8,false],["Screw",2,7.8,true],["Sort",2,7.6,true],["Yarn / rope",2,8.0,true],["Rotate",1,8.4,false],["Loop / conveyor",1,8.7,false],["Sand physics",1,7.4,false],["Cosy logic",1,7.0,false],["Plinko / drop",1,8.2,false],["Goods sort",1,8.0,true],["Block puzzle",1,8.0,true],["Word",1,8.0,false],["Mini-game bundle",1,8.1,false],["3D adventure",1,7.4,false],["Trick riddle",1,7.3,false]],"inputs":[["Tap only (simple)",9],["3+ distinct input types",6],["Drag-to-merge (tap + drag)",3],["Drag only",3],["Tap only (complex)",2]],"mechanics":[["merge-2",3],["story/build meta",3],["block puzzle",1],["sand physics",1],["fidget toys",1],["collectible trading",1]],"themes":[["Clicker DIY: ASMR Charm Master","DIY charm ASMR suits jewellery, slime, nail art, holiday crafts",8],["Fidget Trading: Dumpling Party","Fidget-trading with cute collectibles; swap in pets, desserts, seasonal or holiday trade items",6],["Parking Loop","Parking loop suits theme park rides, airport, holiday traffic, food trucks",8],["Rotate Rings","Rotating rings fit jewellery, clockwork, planets, candy donuts",7],["Surprise Dumpling: ASMR Box","Surprise unboxing ASMR suits food, toys, blind-box pets, holiday gifts",8],["Coin Bounce","Coin bounce suits pirates, arcade, casino-lite",6],["Bolt Out - Puzzle Game","Screw/bolt puzzle suits toy repair, robot builder, car garage, furniture flip",8],["MemeMix Challenge: Funny Party","Meme party pack rotates trends; themes are short-lived",6],["Cutie Sort: Kitten Games","Cat-sort suits dogs, bunnies, cozy cafe, Halloween costumes, holiday gift sets",9],["Sort Streak: Color Puzzle","Flowers-on-ropes sort suits seasons, gift wrapping, jewellery, pets and holiday décor",8],["Rope Sort!","Yarn/rope sorting suits seasonal, knitting, pets and holiday-gift themes",8],["Mochiroom Puzzle:Room Sort","Room sort is a natural home-decor, cozy cafe, dorm, holiday room vehicle",9]]},"cards":{"ios:6752672568":{"name":"Block Out! - Color Sort Puzzle","platform":"iOS","developer":"Grand Games A.Ş.","url":"https://apps.apple.com/us/app/block-out-color-sort-puzzle/id6752672568","overall":7.1,"momentum":5.3,"staying":5.2,"size":6.8,"hook":7.8,"monetisation":8,"theme":8,"feasibility":7,"mashup":10,"input":"Drag only","confidence":"high","why":"Slide blocks out through matching doors (Color Block Jam style): drag-only, proven block+jam combo. Downloads -3% vs prior 30d (ST)","themeIdeas":"Colour-sort blocks reskin to toy box, candy factory, fashion boutique, Lego-style builds","ageDays":414,"ratedOn":"2026-11-13","family":"Block slide","saturated":false,"mechanics":["block slide","colour sort"],"dl30":8534664,"dlGrowth":-0.034,"rev30":8663862,"dau":1350274,"metrics":"iOS 4.72★ (368,886 ratings)","unique":"Slide blocks out through matching doors (Color Block Jam style): drag-only, proven block+jam combo. Mashup of block slide + colour sort scores 10/10 on Pintu's fit check. Block slide trend is still open (Pintu stage 6/10).","perf":"Last 30 days (Sensor Tower): 8.5M downloads, -3% vs prior 30 days, $8.7M store revenue. Momentum 5.3/10 at 414 days old.","icon":"g4.png"},"and:bus.sand.fall.jam.loop.traffic.flow":{"name":"Jam Bus:Sandfall","platform":"Android","developer":"Nova Games Technology Limited","url":"https://play.google.com/store/apps/details?id=bus.sand.fall.jam.loop.traffic.flow","overall":7.6,"momentum":6.8,"staying":5.1,"size":5.9,"hook":9.5,"monetisation":8,"theme":8,"feasibility":7,"mashup":10,"input":"Tap only (simple)","confidence":"high","why":"Bus jam where passengers are falling sand: both halves tap-driven, sand payoff freshens a saturated jam format. Downloads +23% vs prior 30d (ST)","themeIdeas":"Sandfall bus jam suits beach trips, candy, snow day","ageDays":154,"ratedOn":"2026-11-13","family":"Jam","saturated":true,"mechanics":["bus jam","sandfall physics"],"dl30":2374615,"dlGrowth":0.228,"rev30":3217332,"dau":266025,"metrics":"Android 4.67★ (79,636 ratings), 1,000,000+ installs","unique":"Bus jam where passengers are falling sand: both halves tap-driven, sand payoff freshens a saturated jam format. Mashup of bus jam + sandfall physics scores 10/10 on Pintu's fit check.","perf":"Last 30 days (Sensor Tower): 2.4M downloads, +23% vs prior 30 days, $3.2M store revenue. Momentum 6.8/10 at 154 days old.","icon":"g1.png"},"ios:6761760135":{"name":"Meowdoku!","platform":"iOS + Android","developer":"Oakever Games","url":"https://apps.apple.com/us/app/meowdoku/id6761760135","overall":7.1,"momentum":7.0,"staying":7.3,"size":6.0,"hook":7.2,"monetisation":6,"theme":9,"feasibility":8,"input":"Tap only (complex)","confidence":"high","why":"Cat-themed tap-only logic grid: cute hook, cosy-logic wave led by Meowdoku itself (followers like Zoodoku). Downloads +8% vs prior 30d (ST)","themeIdeas":"Cat/pets core already; spin off dogs, cozy cafe, Halloween costume and holiday-décor seasons","ageDays":207,"ratedOn":"2026-11-13","family":"Cosy logic","saturated":false,"dl30":15558377,"dlGrowth":0.079,"rev30":9011,"dau":6393809,"metrics":"iOS 4.81★ (428,674 ratings); Android 4.64★ (648,158 ratings), 10,000,000+ installs","unique":"Cat-themed tap-only logic grid: cute hook, cosy-logic wave led by Meowdoku itself (followers like Zoodoku). Cosy logic trend is still open (Pintu stage 8/10).","perf":"Last 30 days (Sensor Tower): 15.6M downloads, +8% vs prior 30 days. Momentum 7.0/10 at 207 days old.","icon":"g3.png"},"and:com.mobsmile.coinbounce":{"name":"Coin Bounce","platform":"Android","developer":"Mobsmile Games AS","url":"https://play.google.com/store/apps/details?id=com.mobsmile.coinbounce","overall":6.8,"momentum":8.2,"staying":4.0,"size":3.5,"hook":9.0,"monetisation":6,"theme":6,"feasibility":8,"input":"Tap only (simple)","confidence":"medium","why":"Tap to drop coins that bounce into multipliers: plinko payoff. Store ratings +459% per 30d (public); 551K installs since launch (Google Play)","themeIdeas":"Coin bounce suits pirates, arcade, casino-lite","ageDays":104,"ratedOn":"2026-11-13","family":"Plinko / drop","saturated":false,"metrics":"Android 4.25★ (2,323 ratings), 100,000+ installs","unique":"Tap to drop coins that bounce into multipliers: plinko payoff. Plinko / drop trend is still open (Pintu stage 6/10).","perf":"Momentum 8.2/10 at 104 days old.","icon":"g5.png"},"ios:6758326278":{"name":"Amaze GO!™","platform":"iOS + Android","developer":"Oakever Games","url":"https://apps.apple.com/us/app/amaze-go/id6758326278","overall":6.7,"momentum":5.1,"staying":7.1,"size":5.4,"hook":9.0,"monetisation":5,"theme":7,"feasibility":9,"input":"Tap only (simple)","confidence":"high","why":"Tap arrows to clear the board: biggest arrow-escape title, ad-funded. Downloads -14% vs prior 30d (ST)","themeIdeas":"Arrow-escape logic is abstract; add mazes with pets, haunted house, heist, zen garden","ageDays":283,"ratedOn":"2026-11-13","family":"Arrow escape","saturated":false,"dl30":7988353,"dlGrowth":-0.142,"rev30":0,"dau":5438582,"metrics":"iOS 4.67★ (271,248 ratings); Android 4.85★ (574,893 ratings), 100,000,000+ installs","unique":"Tap arrows to clear the board: biggest arrow-escape title, ad-funded. Arrow escape trend is still open (Pintu stage 6/10).","perf":"Last 30 days (Sensor Tower): 8.0M downloads, -14% vs prior 30 days. Momentum 5.1/10 at 283 days old.","icon":"g6.png"},"ios:6751056652":{"name":"Pixel Flow!","platform":"iOS","developer":"Loom Games Oyun Yazilim ve Pazarlama Anonim Sirketi","url":"https://apps.apple.com/us/app/pixel-flow/id6751056652","overall":7.6,"momentum":4.6,"staying":8.8,"size":8.4,"hook":9.5,"monetisation":10,"theme":8,"feasibility":6,"input":"Tap only (simple)","confidence":"high","why":"Tap shooters to paint pixel art: sort-puzzle hit with top RPD ($4.33 lifetime). Downloads -23% vs prior 30d (ST)","themeIdeas":"Pixel flow suits pixel-art packs: pets, food, anime, holidays","ageDays":458,"ratedOn":"2026-11-13","family":"Pixel fill","saturated":false,"dl30":850764,"dlGrowth":-0.233,"rev30":11218445,"dau":1193515,"metrics":"iOS 4.65★ (176,291 ratings)","unique":"Tap shooters to paint pixel art: sort-puzzle hit with top RPD ($4.33 lifetime). Pixel fill trend is still open (Pintu stage 7/10).","perf":"Last 30 days (Sensor Tower): 851K downloads, -23% vs prior 30 days, $11.2M store revenue. Momentum 4.6/10 at 458 days old.","icon":"g2.png"},"and:com.RC67.surprise.dumpling.ASMR.box":{"name":"Surprise Dumpling: ASMR Box","platform":"Android","developer":"NAMIGAME","url":"https://play.google.com/store/apps/details?id=com.RC67.surprise.dumpling.ASMR.box","overall":5.0,"momentum":8.4,"staying":4.2,"size":4.9,"hook":5.8,"monetisation":4,"theme":8,"feasibility":6,"input":"3+ distinct input types","cap":"Capped at 5.0 (3+ input types)","confidence":"high","why":"Unbox surprise dumplings ASMR: viral hook, varied gestures, shallow. Downloads +60% vs prior 30d (ST).","themeIdeas":"Surprise unboxing ASMR suits food, toys, blind-box pets, holiday gifts","ageDays":82,"ratedOn":"2026-11-13","family":"ASMR toy","saturated":false,"dl30":4363269,"dlGrowth":0.598,"rev30":0,"dau":425424,"metrics":"Android 4.66★ (42,443 ratings), 5,000,000+ installs","icon":"u2.png"},"and:com.nebula.ropesort":{"name":"Rope Sort!","platform":"Android","developer":"Nebula Studio","url":"https://play.google.com/store/apps/details?id=com.nebula.ropesort","overall":7.0,"momentum":8.0,"staying":6.2,"size":1.9,"hook":9.0,"monetisation":8,"theme":8,"feasibility":7,"input":"Tap only (simple)","confidence":"high","why":"Tap ropes to untangle and sort by colour: rope/yarn sort, launched 21 Oct 2026. New launch: 383K downloads in 30d (ST)","themeIdeas":"Yarn/rope sorting suits seasonal, knitting, pets and holiday-gift themes","ageDays":28,"ratedOn":"2026-11-18","family":"Yarn / rope","saturated":true,"dl30":383409,"rev30":0,"metrics":"Android 4.97★ (9,213 ratings), 100,000+ installs","icon":"n4.png"},"and:com.loop.packedloop":{"name":"Parking Loop","platform":"iOS + Android","developer":"Loop Games A.S.","url":"https://play.google.com/store/apps/details?id=com.loop.packedloop","overall":7.3,"momentum":8.7,"staying":4.5,"size":3.7,"hook":9.0,"monetisation":7,"theme":8,"feasibility":8,"input":"Tap only (simple)","confidence":"high","why":"Tap cars into a circular parking loop: newer twist on parking jam, still few entrants. Downloads +5291% vs prior 30d (ST)","themeIdeas":"Parking loop suits theme park rides, airport, holiday traffic, food trucks","ageDays":82,"ratedOn":"2026-11-13","family":"Loop / conveyor","saturated":false,"dl30":1583545,"dlGrowth":52.91,"rev30":116809,"dau":90099,"metrics":"Android 4.48★ (4,149 ratings), 100,000+ installs; iOS 4.73★ (2,819 ratings)","icon":"n1.png"},"and:com.mimik.challenge.fun":{"name":"MemeMix Challenge: Funny Party","platform":"Android","developer":"Amobear VN Game Global","url":"https://play.google.com/store/apps/details?id=com.mimik.challenge.fun","overall":5.0,"momentum":8.1,"staying":4.0,"size":5.7,"hook":4.2,"monetisation":4,"theme":6,"feasibility":5,"input":"3+ distinct input types","cap":"Capped at 5.0 (3+ input types)","confidence":"medium","why":"Meme party mini-games: trend-driven, mixed controls. Store ratings +51% per 30d (public); 12.2M installs since launch (Google Play).","themeIdeas":"Meme party pack rotates trends; themes are short-lived","ageDays":61,"ratedOn":"2026-11-13","family":"Mini-game bundle","saturated":false,"metrics":"Android 3.80★ (5,595 ratings), 10,000,000+ installs","icon":"u4.png"},"ios:6783815362":{"name":"Word Tiles - Relaxing Puzzle","platform":"iOS","developer":"Agave Games","url":"https://apps.apple.com/us/app/word-tiles-relaxing-puzzle/id6783815362","overall":6.6,"momentum":8.0,"staying":5.3,"size":4.8,"hook":6.2,"monetisation":6,"theme":7,"feasibility":8,"input":"Tap only (complex)","confidence":"high","why":"Tap letter tiles to form words: relaxed word puzzle. Downloads +140% vs prior 30d (ST)","themeIdeas":"Word tiles suit cozy travel, cooking, book club, holiday word packs","ageDays":113,"ratedOn":"2026-11-13","family":"Word","saturated":false,"dl30":3552147,"dlGrowth":1.402,"rev30":466910,"dau":320942,"metrics":"iOS 4.90★ (69,452 ratings)","icon":"u5.png"},"ios:6757140488":{"name":"Sand Blocks: Drop Puzzle","platform":"iOS","developer":"Rollic Games","url":"https://apps.apple.com/us/app/sand-blocks-drop-puzzle/id6757140488","overall":7.2,"momentum":7.4,"staying":4.0,"size":6.4,"hook":8.2,"monetisation":7,"theme":8,"feasibility":5,"mashup":10,"input":"Drag only","confidence":"high","why":"Drag blocks that dissolve into sand lines: block puzzle plus sand physics, Rollic. Downloads +76% vs prior 30d (ST)","themeIdeas":"Sand drop physics suits beach, candy sprinkles, potion powder, snow globe","ageDays":286,"ratedOn":"2026-11-13","family":"Sand physics","saturated":false,"mechanics":["block puzzle","sand physics"],"dl30":2678888,"dlGrowth":0.755,"rev30":5314916,"dau":191130,"metrics":"iOS 4.64★ (18,907 ratings)","icon":"u6.png"},"and:com.gamefactory.roomsort":{"name":"Mochiroom Puzzle:Room Sort","platform":"Android","developer":"ABF ALPENHOF","url":"https://play.google.com/store/apps/details?id=com.gamefactory.roomsort","overall":6.7,"momentum":8.0,"staying":6.2,"size":2.4,"hook":7.2,"monetisation":7,"theme":9,"feasibility":7,"input":"Drag only","confidence":"high","why":"Drag items into a cosy room: tidy-up appeal, drag-only; goods-sort wave is crowded. New launch: 685K downloads in 30d (ST)","themeIdeas":"Room sort is a natural home-decor, cozy cafe, dorm, holiday room vehicle","ageDays":27,"ratedOn":"2026-11-13","family":"Goods sort","saturated":true,"dl30":684760,"rev30":0,"metrics":"Android 4.17★ (216 ratings), 100,000+ installs","icon":"n7.png"},"and:com.fidget.dumplingparty":{"name":"Fidget Trading: Dumpling Party","platform":"Android","developer":"Novix Games","url":"https://play.google.com/store/apps/details?id=com.fidget.dumplingparty","overall":5.0,"momentum":8.9,"staying":3.7,"size":4.5,"hook":5.8,"monetisation":4,"theme":6,"feasibility":6,"mashup":6,"input":"3+ distinct input types","cap":"Capped at 5.0 (3+ input types)","confidence":"high","why":"Fidget toys plus collectible trading: varied gestures, trading layer is loosely tied. New launch: 3.7M downloads in 30d (ST).","themeIdeas":"Fidget-trading with cute collectibles; swap in pets, desserts, seasonal or holiday trade items","ageDays":29,"ratedOn":"2026-11-16","family":"ASMR toy","saturated":false,"mechanics":["fidget toys","collectible trading"],"dl30":3650391,"rev30":0,"dau":247651,"metrics":"Android 3.59★ (719 ratings), 1,000,000+ installs","icon":"u1.png"},"and:com.oakever.sortparade":{"name":"Sort Streak: Color Puzzle","platform":"iOS + Android","developer":"Oakever Games","url":"https://play.google.com/store/apps/details?id=com.oakever.sortparade","overall":7.0,"momentum":8.0,"staying":4.9,"size":2.6,"hook":9.0,"monetisation":8,"theme":8,"feasibility":7,"input":"Tap only (simple)","confidence":"high","why":"Tap flowers along ropes to sort: rope/yarn sort variant. New launch: 954K downloads in 30d (ST)","themeIdeas":"Flowers-on-ropes sort suits seasons, gift wrapping, jewellery, pets and holiday décor","ageDays":57,"ratedOn":"2026-11-14","family":"Yarn / rope","saturated":true,"dl30":954221,"dlGrowth":117.17,"rev30":0,"dau":40777,"metrics":"iOS 4.67★ (1,245 ratings); Android 4.66★ (22,201 ratings), 100,000+ installs","icon":"n3.png"},"and:com.gl.unbolt":{"name":"Bolt Out - Puzzle Game","platform":"Android","developer":"Loyalty Gaming","url":"https://play.google.com/store/apps/details?id=com.gl.unbolt","overall":7.0,"momentum":8.1,"staying":5.1,"size":2.1,"hook":9.0,"monetisation":8,"theme":8,"feasibility":7,"input":"Tap only (simple)","confidence":"high","why":"Tap screws/bolts off a board: clear goal, continue-friendly; screw genre saturated. Downloads +640% vs prior 30d (ST)","themeIdeas":"Screw/bolt puzzle suits toy repair, robot builder, car garage, furniture flip","ageDays":63,"ratedOn":"2026-11-13","family":"Screw","saturated":true,"dl30":567883,"dlGrowth":6.397,"rev30":0,"dau":42311,"metrics":"Android 4.55★ (25,649 ratings), 100,000+ installs","icon":"n2.png"},"and:com.gl.bus":{"name":"Block Bus!","platform":"Android","developer":"Loyalty Gaming","url":"https://play.google.com/store/apps/details?id=com.gl.bus","overall":6.9,"momentum":6.9,"staying":5.1,"size":1.8,"hook":9.5,"monetisation":8,"theme":8,"feasibility":7,"mashup":9,"input":"Tap only (simple)","confidence":"high","why":"Tap buses then fill them with blocks: same tap gesture across both mechanics. Downloads +27% vs prior 30d (ST)","themeIdeas":"Block-and-fill bus suits holiday travel, airport, school trip, theme park, safari","ageDays":90,"ratedOn":"2026-11-15","family":"Jam","saturated":true,"mechanics":["bus jam","block fill"],"dl30":385025,"dlGrowth":0.272,"rev30":0,"dau":28337,"metrics":"Android 4.50★ (43,874 ratings), 500,000+ installs","icon":"n5.png"},"cg:screw-out-bolts-and-nuts":{"name":"Screw Out: Bolts and Nuts","platform":"CrazyGames","developer":"Vkusnyatina","url":"https://www.crazygames.com/game/screw-out-bolts-and-nuts","overall":7.8,"momentum":7.4,"staying":7.0,"size":7.7,"hook":9.0,"monetisation":8,"theme":8,"feasibility":7,"input":"Tap only (simple)","confidence":"medium","why":"Tap screws off boards: web screw puzzle. CrazyGames plays/votes per month and live rank: web rank 6 of 32","themeIdeas":"Screw puzzle suits toy repair, robot, car garage","ageDays":625,"ratedOn":"2026-11-13","family":"Screw","saturated":true,"metrics":"8.6/10 (83,705 votes), 14,439,423 plays","icon":"u7.png"},"and:com.blockblast.lite":{"name":"Block Blast Lite","platform":"Android","developer":"HungryStudio","url":"https://play.google.com/store/apps/details?id=com.blockblast.lite","overall":6.7,"momentum":8.0,"staying":6.2,"size":4.1,"hook":7.8,"monetisation":5,"theme":8,"feasibility":6,"input":"Drag only","confidence":"medium","why":"Lite clone of Block Blast: drag-only block puzzle, no twist. 3.7M installs since launch (Google Play)","themeIdeas":"Block puzzle takes jewels, candy, Halloween pumpkins, holiday skins","ageDays":70,"ratedOn":"2026-11-15","family":"Block puzzle","saturated":true,"metrics":"Android 4.83★ (11,587 ratings), 1,000,000+ installs","icon":"n6.png"},"ios:6793924927":{"name":"Rotate Rings","platform":"iOS + Android","developer":"Nebula Studio","url":"https://apps.apple.com/us/app/rotate-rings/id6793924927","overall":7.3,"momentum":8.4,"staying":5.2,"size":5.6,"hook":8.5,"monetisation":6,"theme":7,"feasibility":8,"input":"Tap only (simple)","confidence":"high","why":"Tap to rotate rings and line up colours: fresh one-gesture format. Downloads -20% vs prior 30d (ST)","themeIdeas":"Rotating rings fit jewellery, clockwork, planets, candy donuts","ageDays":110,"ratedOn":"2026-11-13","family":"Rotate","saturated":false,"dl30":9686753,"dlGrowth":-0.202,"rev30":0,"dau":1098708,"metrics":"iOS 4.81★ (93,292 ratings); Android 4.78★ (370,797 ratings), 10,000,000+ installs","icon":"u3.png"}},"rows":[["Screw Out: Bolts and Nuts","CrazyGames",7.8,7.4,7.7,9.0,"Screw","11-13",null,null,"U"],["Piece of Cake: Merge and Bake","CrazyGames",7.7,7.8,9.0,6.8,"Merge-2","11-13",null,null,""],["Jam Bus:Sandfall","Android",7.6,6.8,5.9,9.5,"Jam","11-13",2374615,0.228,"G"],["Pixel Flow!","iOS",7.6,4.6,8.4,9.5,"Pixel fill","11-13",850764,-0.233,"G"],["Yarn Loop","Android",7.5,5.8,8.2,9.0,"Yarn / rope","11-13",1206404,0.305,""],["Designville: Merge & Design","CrazyGames",7.5,7.6,8.5,6.8,"Merge-2","11-13",null,null,""],["Bus Traffic Fever!","iOS",7.4,5.3,7.1,9.5,"Jam","11-13",3700839,-0.031,""],["Colony Flow!","iOS",7.4,4.9,8.6,9.0,"Pixel fill","11-13",2434196,-0.5,""],["Blocky Blast Puzzle","Poki",7.4,6.9,8.7,7.8,"Block puzzle","11-13",null,null,""],["Car Circle","Poki",7.4,6.9,7.2,9.0,"Loop / conveyor","11-13",null,null,""],["Farm Merge Valley","CrazyGames",7.4,7.4,8.7,6.8,"Merge-2","11-13",null,null,""],["Rotate Rings","iOS + Android",7.3,8.4,5.6,8.5,"Rotate","11-13",9686753,-0.202,"U"],["Parking Loop","iOS + Android",7.3,8.7,3.7,9.0,"Loop / conveyor","11-13",1583545,52.91,"N"],["Gardenscapes","iOS",7.3,5.9,9.3,7.8,"Match-3 + meta","11-13",7583281,1.144,""],["Match Factory!","iOS",7.3,4.2,8.5,9.0,"Tile match","11-13",1142251,-0.028,""],["Magic Sort!","iOS + Android",7.2,5.0,6.8,9.0,"Sort","11-13",9709077,0.007,""],["Sand Blocks: Drop Puzzle","iOS",7.2,7.4,6.4,8.2,"Sand physics","11-13",2678888,0.755,"U"],["Block Blaster","CrazyGames",7.2,6.2,8.1,7.8,"Block puzzle","11-13",null,null,""],["Meowdoku!","iOS + Android",7.1,7.0,6.0,7.2,"Cosy logic","11-13",15558377,0.079,"G"],["Block Out! - Color Sort Puzzle","iOS",7.1,5.3,6.8,7.8,"Block slide","11-13",8534664,-0.034,"G"],["Cutie Sort: Kitten Games","Android",7.1,8.0,3.1,9.0,"Sort","11-14",1339478,1.439,""],["Bus Fever Party!","iOS + Android",7.0,4.9,6.3,9.5,"Jam","11-13",15315244,-0.086,""],["Gossip Harbor®: Merge & Story","iOS + Android",7.0,4.8,9.7,6.8,"Merge-2","11-13",12518023,0.022,""],["Bolt Out - Puzzle Game","Android",7.0,8.1,2.1,9.0,"Screw","11-13",567883,6.397,"N"],["Goods Master","Poki",7.0,5.3,7.8,7.8,"Goods sort","11-13",null,null,""],["Sort Streak: Color Puzzle","iOS + Android",7.0,8.0,2.6,9.0,"Yarn / rope","11-14",954221,117.17,"N"],["Rope Sort!","Android",7.0,8.0,1.9,9.0,"Yarn / rope","11-18",383409,null,"N"],["Royal Kingdom","iOS + Android",6.9,4.6,9.2,7.8,"Match-3 + meta","11-13",6035968,0.11,""],["Toon Blast","iOS",6.9,3.8,8.8,9.0,"Blast","11-13",1193955,-0.143,""],["World of Yarn","Poki",6.9,4.3,6.7,9.0,"Yarn / rope","11-13",null,null,""],["Hole Stars: Puzzle Game","Android",6.9,6.0,7.4,8.2,"Hole","11-15",985794,0.267,""],["Block Bus!","Android",6.9,6.9,1.8,9.5,"Jam","11-15",385025,0.272,"N"],["Colorever: Gem Art Puzzle","iOS",6.9,5.8,4.3,9.5,"Pixel fill","11-17",null,null,""],["Block Blast！","iOS + Android",6.8,5.0,6.4,8.2,"Block puzzle","11-13",23718898,0.08,""],["Pocket Sort: Coin Merge Puzzle","Android",6.8,4.6,4.9,9.0,"Sort","11-13",1835429,-0.066,""],["Coin Bounce","Android",6.8,8.2,3.5,9.0,"Plinko / drop","11-13",null,null,"G"],["Bus Crowd - Traffic Jam","Android",6.8,6.3,4.0,9.5,"Jam","11-13",2545933,0.304,""],["Jelly Busters: Puzzle Game","iOS",6.8,4.2,8.2,9.0,"Blast","11-13",521110,-0.162,""],["Mergest Kingdom","CrazyGames",6.8,4.7,8.5,6.8,"Merge-2","11-13",null,null,""],["Mansion Tale: Merge Secrets","CrazyGames",6.8,5.8,6.8,6.8,"Merge-2","11-13",null,null,""],["Amaze GO!™","iOS + Android",6.7,5.1,5.4,9.0,"Arrow escape","11-13",7988353,-0.142,"G"],["Mochiroom Puzzle:Room Sort","Android",6.7,8.0,2.4,7.2,"Goods sort","11-13",684760,null,"N"],["Cube Land Puzzle Game","Android",6.7,4.5,7.1,9.0,"Blast","11-13",1449575,-0.092,""],["Candy Crush Saga","iOS + Android",6.7,4.3,9.5,7.8,"Match-3","11-13",7832192,0.009,""],["Block Blast Lite","Android",6.7,8.0,4.1,7.8,"Block puzzle","11-15",null,null,"N"],["Tropical Merge","CrazyGames",6.7,4.4,7.3,6.8,"Merge-2","11-15",null,null,""],["Word Tiles - Relaxing Puzzle","iOS",6.6,8.0,4.8,6.2,"Word","11-13",3552147,1.402,"U"],["Tasty Travels: Merge Game","iOS",6.6,3.5,9.0,6.8,"Merge-2","11-13",3773733,-0.235,""],["CarLoop","Android",6.6,5.3,4.7,9.0,"Loop / conveyor","11-13",1131466,-0.121,""],["Fishdom","iOS",6.6,3.0,8.7,7.8,"Match-3 + meta","11-13",758348,-0.306,""],["Homescapes","iOS",6.6,2.9,8.8,7.8,"Match-3 + meta","11-13",1233285,-0.283,""],["Coin Master","iOS + Android",6.6,3.5,7.9,8.5,"Social casino","11-13",null,null,""],["Longcat","Poki",6.6,4.8,8.0,7.8,"Snake fill","11-13",null,null,""],["Wood Block Journey","CrazyGames",6.6,4.5,7.0,7.8,"Block puzzle","11-15",null,null,""],["Loop Sort","Android",6.6,4.5,6.0,9.0,"Loop / conveyor","11-17",1486118,-0.332,""],["Fish Sort Puzzle - Bubble Jam","iOS",6.5,4.3,4.7,9.0,"Sort","11-13",2733423,-0.263,""],["Pink Pour: Water Sort","Android",6.5,7.2,1.4,8.5,"Sort","11-13",246424,null,""],["Royal Match","iOS",6.5,3.1,9.5,7.8,"Match-3","11-13",5360147,-0.471,""],["Family Sort","Poki",6.5,4.5,4.5,9.0,"Sort","11-13",null,null,""],["Royal Smash! - Physics Puzzle","Android",6.4,5.4,5.9,7.8,"Physics smash","11-13",3921332,-0.213,""],["Piles of Mahjong","CrazyGames",6.4,5.9,7.6,6.2,"Mahjong","11-13",null,null,""],["Tile Explorer - Triple Match","Android",6.4,2.9,4.6,9.0,"Tile match","11-16",2864842,-0.242,""],["Dice Dreams™️","Android",6.3,3.5,5.7,8.5,"Social casino","11-13",null,null,""],["Color Tap: Coloring by Numbers","CrazyGames",6.3,3.8,6.7,8.0,"Colour by number","11-13",null,null,""],["Arrow Puzzle: Tap Puzzle Games","Android",6.3,3.4,5.4,9.0,"Arrow escape","11-14",7174625,-0.339,""],["Coin Master - Board Adventure","Android",6.3,4.5,4.8,8.5,"Social casino","11-15",null,null,""],["Candy Crush Soda Saga","iOS",6.3,3.4,8.4,7.8,"Match-3","11-18",1241547,0.008,""],["Arrows – Puzzle Escape","Android",6.2,3.7,3.6,9.0,"Arrow escape","11-13",2451965,-0.162,""],["Mahjongg Solitaire","CrazyGames",6.2,4.3,9.0,6.2,"Mahjong","11-13",null,null,""],["Gym Idle Clicker: Fitness Hero","Android",6.1,4.0,5.5,8.0,"Idle","11-13",null,null,""],["Numicolor","CrazyGames",6.1,4.6,4.5,8.0,"Colour by number","11-14",null,null,""],["Hexellent","Poki",6.0,3.5,5.6,7.2,"Hexa sort","11-13",null,null,""],["Paper.io 2","iOS",6.0,4.6,6.1,7.8,".io","11-14",14882080,0.489,""],["Magic Tiles 3™: Piano Game","iOS",5.9,4.1,5.3,8.2,"Rhythm","11-13",8066223,0.067,""],["Hole.io - Original Hole Game","Android",5.8,3.2,5.1,8.2,"Hole","11-14",5544963,-0.212,""],["Bottle Flip 3D — Tap & Jump!","Android",5.8,4.9,4.5,9.0,"One-tap flip","11-16",3285092,1.053,""],["Bubble Storm","Poki",5.7,3.1,6.2,7.2,"Bubble shooter","11-13",null,null,""],["Hidden Objects","CrazyGames",5.7,4.0,4.5,6.8,"Hidden object","11-13",null,null,""],["Subway Surfers","iOS",5.5,2.8,5.4,8.2,"Runner","11-13",12348158,-0.159,""],["Shenzhen Mahjong","Poki",5.5,3.2,6.7,6.2,"Mahjong","11-13",null,null,""],["Skydom","CrazyGames",5.4,3.6,7.1,6.8,"PvP match-3","11-13",null,null,""],["Fast Cash Farkle","Android",5.1,6.9,3.1,7.5,"Cash skill","11-13",null,null,""],["Township","iOS + Android",5.0,3.5,7.8,4.2,"Farm / town","11-13",null,null,""],["Brain Puzzle 3: Crazy Mind","iOS + Android",5.0,4.3,6.0,5.2,"Trick riddle","11-13",15860023,-0.067,""],["CubeAway - 3DPuzzle","iOS + Android",5.0,4.4,5.5,5.2,"3D cube","11-13",4140755,-0.206,""],["MemeMix Challenge: Funny Party","Android",5.0,8.1,5.7,4.2,"Mini-game bundle","11-13",null,null,"U"],["Clicker DIY: ASMR Charm Master","Android",5.0,9.1,3.2,5.8,"ASMR toy","11-13",2328790,null,""],["Surprise Dumpling: ASMR Box","Android",5.0,8.4,4.9,5.8,"ASMR toy","11-13",4363269,0.598,"U"],["Relax Mini Games","Android",5.0,6.9,5.1,4.2,"Mini-game bundle","11-13",5280041,1.51,""],["Scary Teacher 3D","Poki",5.0,7.4,9.0,4.8,"3D adventure","11-13",null,null,""],["Brain Test: Tricky Puzzles","Poki",5.0,7.3,8.8,5.2,"Trick riddle","11-13",null,null,""],["Tic Tac Toe Ultimate","Poki",5.0,4.2,7.2,5.8,"Classic board","11-13",null,null,""],["Chess Pro","Poki",5.0,4.9,7.0,5.8,"Classic board","11-13",null,null,""],["Fidget Trading: Dumpling Party","Android",5.0,8.9,4.5,5.8,"ASMR toy","11-16",3650391,null,"U"],["Archery Duel 3D","Android",5.0,6.0,2.5,6.8,"Aim & shoot","11-16",null,null,""],["Satisfying Toys : Calm Games","Android",5.0,5.0,5.1,5.8,"ASMR toy","11-17",null,null,""],["Offline Games - No Wifi Games","Android",4.9,4.6,4.9,4.2,"Mini-game bundle","11-13",4135273,-0.054,""],["Skydom: Reforged","CrazyGames",4.9,2.9,4.5,6.8,"PvP match-3","11-13",null,null,""],["Match Arena","CrazyGames",4.8,2.3,4.5,6.8,"PvP match-3","11-14",null,null,""],["Mini Games: Calm & Relax","Android",4.8,4.4,4.8,4.2,"Mini-game bundle","11-15",null,null,""],["Mini Challenges: Calm Games","Android",4.8,5.6,4.7,4.2,"Mini-game bundle","11-17",3217695,0.508,""],["Mahjong Connect (Legacy)","CrazyGames",4.7,2.6,2.4,6.2,"Mahjong","11-13",null,null,""],["Rivetoria: Bunker Reborn","itch.io",4.6,2.4,1.0,6.2,"Merge (web)","11-18",null,null,""],["Mahjong Online","CrazyGames",4.4,2.1,1.7,6.2,"Mahjong","11-13",null,null,""],["Mahjong Clash: Win Real Cash","iOS",4.2,5.8,1.9,6.2,"Cash skill","11-14",393445,0.351,""],["Nonogueram","itch.io",4.2,2.6,1.3,5.8,"Logic (web)","11-18",null,null,""],["もち、時々ニセモノ / Mostly MOCHI (sometimes fake)","itch.io",4.1,2.1,1.0,7.5,"One-tap toy (web)","11-13",null,null,""],["Moon Jar Dokkaebi","itch.io",4.1,2.4,1.2,6.2,"Merge (web)","11-14",null,null,""],["呪クイーズ / Zyuquish","itch.io",4.1,2.1,1.0,7.5,"One-tap toy (web)","11-15",null,null,""],["Bluey: Let's Play!","Android",4.1,3.1,4.8,3.8,"Licensed kids","11-16",null,null,""],["What is an Elephant?","itch.io",4.1,2.1,1.0,8.0,"One-tap toy (web)","11-18",null,null,""],["TidyUp 2000 [Demo]","itch.io",4.0,2.1,1.3,6.2,"Drag puzzle (web)","11-13",null,null,""],["Lucky Balls","itch.io",4.0,2.1,1.0,7.5,"One-tap toy (web)","11-13",null,null,""],["Bombounce","itch.io",4.0,2.3,1.0,7.5,"One-tap toy (web)","11-17",null,null,""],["Eco Power Towns","itch.io",3.9,2.6,1.7,5.8,"Logic (web)","11-13",null,null,""],["Taiyaki Fabulous Test Kitchen","itch.io",3.9,2.6,1.6,5.8,"Logic (web)","11-14",null,null,""],["Count your Luck","itch.io",3.9,2.4,1.0,5.8,"Logic (web)","11-14",null,null,""],["Bounce!","itch.io",3.9,2.1,1.0,7.5,"One-tap toy (web)","11-15",null,null,""],["Liru","itch.io",3.9,2.1,1.0,6.2,"One-tap toy (web)","11-15",null,null,""],["Sneak the Sausage","itch.io",3.9,2.1,1.0,7.5,"One-tap toy (web)","11-18",null,null,""],["Triumph Arcade","iOS",3.8,4.7,1.8,3.8,"Cash skill","11-13",345069,0.14,""],["Goo.py","itch.io",3.8,2.4,1.0,5.8,"Logic (web)","11-15",null,null,""],["Truc Mahjong","itch.io",3.8,2.1,1.0,6.2,"Grid move (web)","11-16",null,null,""],["Nonobunny","itch.io",3.8,2.4,1.0,5.8,"Logic (web)","11-17",null,null,""],["Pingo & Co","itch.io",3.7,2.1,1.0,6.2,"Grid move (web)","11-13",null,null,""],["Elemental","itch.io",3.7,2.1,1.0,6.2,"Grid move (web)","11-14",null,null,""],["Pipknot","itch.io",3.7,2.1,1.0,6.2,"Grid move (web)","11-15",null,null,""],["Sokoban...But you are a crab!","itch.io",3.7,2.1,1.0,6.2,"Grid move (web)","11-15",null,null,""],["Cineruption","itch.io",3.7,2.1,1.2,6.2,"Drag puzzle (web)","11-15",null,null,""],["Resize It!","itch.io",3.7,2.4,1.0,5.8,"Logic (web)","11-16",null,null,""],["That's How It Goose","itch.io",3.7,2.1,1.0,6.2,"Grid move (web)","11-16",null,null,""],["Monty Montana and the Mausoleum of Mirrors","itch.io",3.7,2.1,1.2,6.2,"Grid move (web)","11-16",null,null,""],["Goat","itch.io",3.7,2.1,1.0,6.2,"Grid move (web)","11-16",null,null,""],["Potter's Palm","itch.io",3.7,2.1,1.0,6.2,"Drag puzzle (web)","11-18",null,null,""],["QED","itch.io",3.7,2.4,1.0,5.8,"Logic (web)","11-18",null,null,""],["ブロックマンションビルダー (Block Mansion Builder)","itch.io",3.6,2.1,1.0,6.2,"Drag puzzle (web)","11-16",null,null,""],["Totally Jellyness","itch.io",3.6,2.1,1.0,6.2,"Drag puzzle (web)","11-16",null,null,""],["One Square","itch.io",3.5,2.1,1.0,6.2,"Grid move (web)","11-17",null,null,""],["Verso","itch.io",3.5,2.1,1.0,6.2,"Grid move (web)","11-17",null,null,""],["Koma","itch.io",3.5,2.1,1.0,6.2,"Grid move (web)","11-17",null,null,""],["Supercontinent Puzzle","itch.io",3.5,2.1,1.0,6.2,"Drag puzzle (web)","11-18",null,null,""],["Nemzeti Közpénzkereső","itch.io",3.3,2.4,1.0,4.8,"Logic (web)","11-16",null,null,""],["Time O'Clock: The Mask of Crime","itch.io",3.2,1.8,1.0,5.2,"Story / sim (web)","11-13",null,null,""],["あなたの個人情報は漏洩しました","itch.io",3.2,1.8,1.0,5.2,"Story / sim (web)","11-13",null,null,""],["Counting Shadows","itch.io",3.2,1.8,1.0,5.2,"Story / sim (web)","11-14",null,null,""],["Season Shift","itch.io",3.1,2.3,1.6,3.2,"Platformer (web)","11-13",null,null,""],["Supermarket Spree DX","itch.io",3.1,2.3,1.5,3.2,"Platformer (web)","11-13",null,null,""],["Shadow Kanji Simulator","itch.io",3.1,1.8,1.1,5.2,"Story / sim (web)","11-14",null,null,""],["CASE NR. 312 - RICK BACKER","itch.io",3.1,1.8,1.0,5.2,"Story / sim (web)","11-14",null,null,""],["Lucky Town","itch.io",3.1,1.8,1.0,5.2,"Story / sim (web)","11-14",null,null,""],["TW: Job","itch.io",3.1,1.9,1.3,5.2,"Story / sim (web)","11-16",null,null,""],["A Job at the museum","itch.io",3.1,1.9,1.0,5.2,"Story / sim (web)","11-17",null,null,""],["Nymble 2 Demo","itch.io",3.0,2.3,2.0,3.2,"Platformer (web)","11-13",null,null,""],["Mangore the Magnificent","itch.io",3.0,2.3,1.9,3.2,"Platformer (web)","11-13",null,null,""],["SimpleFallingBlocks","itch.io",2.9,2.1,1.0,3.2,"Platformer (web)","11-14",null,null,""],["Affair Avenue","itch.io",2.9,1.8,1.0,5.2,"Story / sim (web)","11-16",null,null,""],["Runners Luck","itch.io",2.8,2.1,1.2,3.2,"Platformer (web)","11-13",null,null,""],["Chivi Panic","itch.io",2.8,2.1,1.1,3.2,"Platformer (web)","11-13",null,null,""],["light","itch.io",2.8,2.1,1.0,3.2,"Platformer (web)","11-13",null,null,""],["Stay on the Line","itch.io",2.8,2.1,1.0,3.2,"Platformer (web)","11-13",null,null,""],["Carlotta: Clockwork Captive","itch.io",2.7,2.1,1.3,3.2,"Platformer (web)","11-15",null,null,""],["Glitch","itch.io",2.7,2.1,1.0,3.2,"Platformer (web)","11-15",null,null,""],["Dark Expedition: The Unaired (Prototype)","itch.io",2.7,2.1,1.2,3.2,"Platformer (web)","11-16",null,null,""],["Re-Frame","itch.io",2.7,2.1,1.0,3.2,"Platformer (web)","11-16",null,null,""],["jetpack mk-2","itch.io",2.6,2.1,1.0,3.2,"Platformer (web)","11-14",null,null,""],["Are we falling?","itch.io",2.6,2.1,1.0,3.2,"Platformer (web)","11-15",null,null,""],["Cannon Death","itch.io",2.6,2.1,1.0,3.2,"Platformer (web)","11-15",null,null,""],["Haven : 100rps","itch.io",2.6,2.1,1.0,3.2,"Platformer (web)","11-16",null,null,""],["Magenta","itch.io",2.6,2.3,1.0,3.2,"Platformer (web)","11-17",null,null,""],["ORB|OTORY (Action Puzzler, Game Boy Color)","itch.io",2.6,2.1,1.0,3.2,"Platformer (web)","11-18",null,null,""],["NVVH szimulátor","itch.io",2.5,2.1,1.0,3.2,"Platformer (web)","11-17",null,null,""]]};
+// DATA:END
+
+const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const fmtDate = (iso: string): string => { const [y, m, d] = iso.split("-"); return `${Number(d)} ${MON[Number(m) - 1]} ${y}`; };
+const fmtMD = (md: string): string => { const [m, d] = md.split("-"); return md ? `${Number(d)} ${MON[Number(m) - 1]}` : ""; };
+const fmtN = (n: number): string => n >= 1e9 ? (n / 1e9).toFixed(1) + "B" : n >= 1e6 ? (n / 1e6).toFixed(1) + "M" : n >= 1e3 ? Math.round(n / 1e3) + "K" : String(n);
+const fmtG = (g: number): string => (g >= 0 ? "+" : "") + Math.round(g * 100).toLocaleString("en-US") + "%";
+const platGroup = (p: string): string => p === "itch.io" ? "itch" : (p === "CrazyGames" || p === "Poki") ? "web" : "mobile";
+const BUCKET_NAME: Record<string, string> = { N: "New", U: "Up-and-coming", G: "New genre", "": "Other tracked" };
+
+const PICK_WHY: Record<string, string[]> = {
+  "and:com.loop.packedloop": [
+    "Loop / conveyor is the youngest twist on the jam wave Pintu tracks: wave stage 7 and not saturated.",
+    "Downloads jumped +5,291% to 1.6M in the last 30 days at only 82 days old, with a 9/10 hook and simple tap-only input.",
+    "Feasibility 8/10: a loop-and-slots board is a small build. Theme it as theme-park rides, airport or holiday traffic.",
+  ],
+  "ios:6793924927": [
+    "A fresh one-gesture rotate format, not saturated, already at 9.7M downloads and 1.1M DAU in 30 days, with DAU up 33%.",
+    "Downloads dipped 20% vs the prior 30 days, so the leader is maturing: the window is open for a twist, not for a clone.",
+    "Sensor Tower shows no store revenue, so an IAP layer is open ground. Feasibility 8/10; themes: jewellery, clockwork, planets.",
+  ],
+  "ios:6757140488": [
+    "Block puzzle plus sand physics scores a perfect 10/10 mashup fit, and Pintu rates the sand wave as early.",
+    "Downloads +76% to 2.7M, DAU +149% and $5.3M store revenue in 30 days: the strongest money signal of the three.",
+    "Feasibility is 5/10 because of the physics, so prototype the sand feel first. Themes: beach, candy sprinkles, snow globe.",
+  ],
+};
+
+// Icon slots: n1-n7 New, u1-u7 Up-and-coming, g1-g6 New genre (re-uploaded under the same names each week)
+const ICON_SRC: Record<string, string> = {
+  "n1.png": "asset:n1.png", "n2.png": "asset:n2.png", "n3.png": "asset:n3.png", "n4.png": "asset:n4.png", "n5.png": "asset:n5.png", "n6.png": "asset:n6.png", "n7.png": "asset:n7.png",
+  "u1.png": "asset:u1.png", "u2.png": "asset:u2.png", "u3.png": "asset:u3.png", "u4.png": "asset:u4.png", "u5.png": "asset:u5.png", "u6.png": "asset:u6.png", "u7.png": "asset:u7.png",
+  "g1.png": "asset:g1.png", "g2.png": "asset:g2.png", "g3.png": "asset:g3.png", "g4.png": "asset:g4.png", "g5.png": "asset:g5.png", "g6.png": "asset:g6.png",
+};
+
+function GameCard({ c, rank, note }: { c: Card; rank: number; note?: string }) {
+  const t = useGrokTheme();
+  const bar = (label: string, v?: number) => v === undefined ? null : (
+    <div key={label} style={{ display: "grid", gridTemplateColumns: "74px 1fr 30px", alignItems: "center", gap: 8 }}>
+      <span style={{ ...t.font.caption, color: t.text.tertiary }}>{label}</span>
+      <div style={{ height: 6, borderRadius: 3, background: t.border.subtle, overflow: "hidden" }}>
+        <div style={{ width: `${v * 10}%`, height: "100%", borderRadius: 3, background: t.dataviz.categorical[0] }} />
+      </div>
+      <span style={{ ...t.font.caption, color: t.text.secondary, textAlign: "right" }}>{v.toFixed(1)}</span>
+    </div>
+  );
+  const facts: [string, string][] = [];
+  if (c.dl30 !== undefined) facts.push(["Downloads 30d", fmtN(c.dl30)]);
+  if (c.dlGrowth !== undefined) facts.push(["vs prior 30d", fmtG(c.dlGrowth)]);
+  if (c.rev30 !== undefined && c.rev30 > 0) facts.push(["Store revenue 30d", "$" + fmtN(c.rev30)]);
+  if (c.dau !== undefined) facts.push(["DAU", fmtN(c.dau)]);
+  if (c.ageDays !== undefined) facts.push(["Age", `${c.ageDays.toLocaleString("en-US")} days`]);
+  if (c.family) facts.push(["Mechanic", c.family + (c.saturated === false ? " (open wave)" : c.saturated ? " (saturated)" : "")]);
+  if (c.input) facts.push(["Input", c.input]);
+  if (c.confidence) facts.push(["Confidence", c.confidence]);
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+      <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+        <div style={{ width: 56, height: 56, flex: "0 0 56px", borderRadius: t.radius.lg, overflow: "hidden", background: t.bg.subtle }}>
+          {c.icon && ICON_SRC[c.icon] ? <Image src={ICON_SRC[c.icon]} alt={`${c.name} icon`} width={56} ratio="1/1" fit="cover" /> : null}
+        </div>
+        <div style={{ flex: "1 1 auto", minWidth: 0 }}>
+          <div style={{ ...t.font.caption, color: t.text.tertiary }}>#{rank} · {c.platform}</div>
+          <div style={{ ...t.font.heading3, fontWeight: t.weight.semibold, color: t.text.primary }}>{c.name}</div>
+          {c.developer ? <div style={{ ...t.font.caption, color: t.text.tertiary }}>{c.developer}</div> : null}
+        </div>
+        <div style={{ textAlign: "right", flex: "0 0 auto" }}>
+          <div style={{ ...t.font.metric, color: t.text.primary, fontWeight: t.weight.semibold }}>{c.overall.toFixed(1)}</div>
+          <div style={{ ...t.font.caption, color: t.text.tertiary }}>Pintu /10</div>
+        </div>
+      </div>
+      {c.why && !c.unique ? <div style={{ ...t.font.body2, color: t.text.secondary }}>{c.why}</div> : null}
+      <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+        {bar("Momentum", c.momentum)}
+        {bar("Staying", c.staying)}
+        {bar("Market size", c.size)}
+        {bar("Hook", c.hook)}
+      </div>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: "6px 12px" }}>
+        {facts.map(([k, v]: [string, string]) => (
+          <div key={k} style={{ minWidth: 0 }}>
+            <div style={{ ...t.font.caption, color: t.text.tertiary }}>{k}</div>
+            <div style={{ ...t.font.label, color: t.text.primary }}>{v}</div>
+          </div>
+        ))}
+      </div>
+      {c.metrics ? <div style={{ ...t.font.caption, color: t.text.tertiary }}>{c.metrics}</div> : null}
+      {note ? <div style={{ ...t.font.body2, color: t.text.primary, borderTop: `1px solid ${t.border.subtle}`, paddingTop: 10 }}>{note}</div> : null}
+      {c.perf ? <div style={{ ...t.font.caption, color: t.text.secondary }}>{`Performance: ${c.perf}`}</div> : null}
+      {c.cap ? <div style={{ ...t.font.caption, color: t.text.tertiary }}>{c.cap}</div> : null}
+      {c.url ? <a href={c.url} target="_blank" rel="noreferrer" style={{ ...t.font.label, color: t.text.accent, textDecoration: "none" }}>Open store page ↗</a> : null}
+    </div>
+  );
+}
+
+function PickCard({ c, n, why }: { c: Card; n: number; why: string[] }) {
+  const t = useGrokTheme();
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+      <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+        <div style={{ width: 64, height: 64, flex: "0 0 64px", borderRadius: t.radius.xl, overflow: "hidden", background: t.bg.subtle }}>
+          {c.icon && ICON_SRC[c.icon] ? <Image src={ICON_SRC[c.icon]} alt={`${c.name} icon`} width={64} ratio="1/1" fit="cover" /> : null}
+        </div>
+        <div style={{ flex: "1 1 auto", minWidth: 0 }}>
+          <div style={{ ...t.font.caption, color: t.text.tertiary }}>Pick {n} · {c.family}</div>
+          <div style={{ ...t.font.heading3, fontWeight: t.weight.semibold, color: t.text.primary }}>{c.name}</div>
+        </div>
+        <div style={{ ...t.font.metric, color: t.text.primary, fontWeight: t.weight.semibold }}>{c.overall.toFixed(1)}</div>
+      </div>
+      {why.map((w: string, i: number) => (
+        <div key={i} style={{ display: "flex", gap: 10 }}>
+          <div style={{ width: 3, flex: "0 0 3px", borderRadius: 2, background: t.dataviz.categorical[0] }} />
+          <div style={{ ...t.font.body2, color: t.text.secondary }}>{w}</div>
+        </div>
+      ))}
+      {c.url ? <a href={c.url} target="_blank" rel="noreferrer" style={{ ...t.font.label, color: t.text.accent, textDecoration: "none" }}>Open store page ↗</a> : null}
+    </div>
+  );
+}
+
+type TabK = "overview" | "new" | "up" | "genre" | "charts" | "trends" | "all" | "method";
+type TabOpt = { value: TabK; label: string; count?: number };
+
+function TabBar({ tabs, value, onChange }: { tabs: TabOpt[]; value: TabK; onChange: (v: TabK) => void }) {
+  const t = useGrokTheme();
+  const accent = t.dataviz.categorical[0];
+  return (
+    <div style={{ padding: "12px 0 16px", borderBottom: `1px solid ${t.border.subtle}` }}>
+    <div style={{ overflowX: "auto", scrollbarWidth: "none", WebkitOverflowScrolling: "touch", maxWidth: "100%" }}>
+    <div role="tablist" aria-label="Mood board sections" style={{
+      display: "inline-flex", flexWrap: "nowrap", gap: 4, padding: 4, width: "max-content",
+      background: t.bg.subtle, border: `1px solid ${t.border.default}`, borderRadius: t.radius.full,
+    }}>
+      {tabs.map((o: TabOpt) => {
+        const active = o.value === value;
+        return (
+          <button
+            key={o.value}
+            role="tab"
+            aria-selected={active}
+            onClick={() => onChange(o.value)}
+            style={{
+              display: "inline-flex", alignItems: "center", gap: 6, padding: "8px 14px", borderRadius: t.radius.full,
+              border: "none", background: active ? accent : "transparent", whiteSpace: "nowrap",
+              color: active ? t.text.onColor : t.text.secondary, fontFamily: t.font.family, fontSize: 14, lineHeight: "20px",
+              fontWeight: active ? 700 : t.weight.semibold, cursor: "pointer", transition: t.motion.hover,
+            }}
+          >
+            {o.label}
+            {o.count !== undefined ? (
+              <span style={{
+                display: "inline-block", minWidth: 20, padding: "0 6px", borderRadius: t.radius.full, textAlign: "center",
+                fontSize: 12, lineHeight: "18px", fontWeight: t.weight.semibold,
+                background: active ? t.text.onColor : t.fill.secondary, color: active ? accent : t.text.secondary,
+              }}>{o.count}</span>
+            ) : null}
+          </button>
+        );
+      })}
+    </div>
+    </div>
+    </div>
+  );
+}
+type BucketF = "all" | "N" | "U" | "G";
+type SortK = "score" | "momentum" | "size" | "hook" | "dl" | "growth" | "found";
+type PlatK = "all" | "mobile" | "web" | "itch";
+
+export default function App() {
+  const S = DATA.stats;
+  const R = DATA.rules;
+  const rows = DATA.rows;
+  const [tab, setTab] = useState<TabK>("overview");
+  const [bf, setBf] = useState<BucketF>("all");
+  const [sort, setSort] = useState<SortK>("score");
+  const [plat, setPlat] = useState<PlatK>("all");
+  const [q, setQ] = useState<string>("");
+
+  const view = useMemo(() => {
+    const qq = q.trim().toLowerCase();
+    const out = rows.filter((r: RowT) => (bf === "all" || r[10] === bf) && (plat === "all" || platGroup(r[1]) === plat)
+      && (!qq || r[0].toLowerCase().includes(qq) || r[6].toLowerCase().includes(qq)));
+    const key = (r: RowT): number => sort === "score" ? r[2] : sort === "momentum" ? r[3] : sort === "size" ? r[4] : sort === "hook" ? r[5]
+      : sort === "dl" ? (r[8] ?? -1) : sort === "growth" ? (r[9] ?? -99) : Number(r[7].replace("-", ""));
+    return [...out].sort((a: RowT, b: RowT) => key(b) - key(a) || b[2] - a[2]);
+  }, [rows, bf, sort, plat, q]);
+
+  const scatter = rows.map((r: RowT) => ({ x: r[3], y: r[4], label: `${r[0]} (${r[2].toFixed(1)})`, series: BUCKET_NAME[r[10]] }));
+  const scatterSorted = [...scatter.filter((p) => p.series === "New"), ...scatter.filter((p) => p.series === "Up-and-coming"), ...scatter.filter((p) => p.series === "New genre"), ...scatter.filter((p) => p.series === "Other tracked")];
+  const top10 = rows.slice().sort((a: RowT, b: RowT) => b[2] - a[2]).slice(0, 10);
+  const bins = ["1–2", "2–3", "3–4", "4–5", "5–6", "6–7", "7–8", "8–9", "9–10"].map((label: string, i: number) => ({
+    label, value: rows.filter((r: RowT) => r[2] >= i + 1 && (r[2] < i + 2 || (i === 8 && r[2] <= 10))).length,
+  }));
+  const famCount: Record<string, { n: number; sum: number }> = {};
+  rows.forEach((r: RowT) => { const f = famCount[r[6]] ?? { n: 0, sum: 0 }; f.n += 1; f.sum += r[2]; famCount[r[6]] = f; });
+  const famBars = Object.entries(famCount).sort((a, b) => b[1].n - a[1].n).slice(0, 12)
+    .map(([label, v]) => ({ label, value: v.n, display: `${v.n}`, meta: `avg ${(v.sum / v.n).toFixed(1)}` }));
+  const platCounts = { mobile: 0, web: 0, itch: 0 };
+  rows.forEach((r: RowT) => { const g = platGroup(r[1]); if (g === "mobile") platCounts.mobile++; else if (g === "web") platCounts.web++; else platCounts.itch++; });
+  const dayCols = Object.entries(S.added_by_day).map(([d, n]) => ({ label: fmtDate(d).replace(" 2026", ""), value: n, display: String(n) }));
+  const count = (b: string) => rows.filter((r: RowT) => r[10] === b).length;
+  const weekLabel = fmtDate(DATA.weekStart);
+  const tm = S.top_mover;
+
+  const cardsFor = (ids: string[], note: (c: Card) => string | undefined) => (
+    <Grid columns={3}>
+      {ids.map((id: string, i: number) => { const c = DATA.cards[id]; return c ? <GameCard key={id} c={c} rank={i + 1} note={note(c)} /> : null; })}
+    </Grid>
+  );
+
+  return (
+    <Page
+      title={`Ideation Mood Board, Week of ${weekLabel}`}
+      summary={`Chotu's ${S.tracked} tracked games, scored with Pintu's v2 rubric (18 Nov), sorted into three buckets for Mission 1: Ideation. Data as of ${fmtDate(DATA.ratingsUpdatedAt.slice(0, 10))}.`}
+      width="wide"
+      sources={["Pintu - Game Rater v2 scores: /workspace/shared/pintu_ratings.json (updated 18 Nov 2026, 1:17 PM IST)", "Chotu - Game Explorer finds and dates added: /workspace/game-analyzer/rated_games.json", "Mechanic families: Pintu judgements_v2.json archetypes", "Sensor Tower, Worldwide unified iOS + Android, 14 Oct to 12 Nov 2026, store revenue only (IAP, excludes ads)", "CrazyGames and Poki public plays/votes; itch.io listings; App Store and Google Play pages"]}
+    >
+      <TabBar
+        value={tab}
+        onChange={(v: TabK) => setTab(v)}
+        tabs={[
+          { value: "overview", label: "Overview" },
+          { value: "new", label: "New", count: DATA.buckets.new.length },
+          { value: "up", label: "Rising", count: DATA.buckets.up.length },
+          { value: "genre", label: "New genres", count: DATA.buckets.newGenre.length },
+          { value: "charts", label: "Charts" },
+          { value: "trends", label: "Trends" },
+          { value: "all", label: "All games", count: rows.length },
+          { value: "method", label: "Method" },
+        ]}
+      />
+
+      {tab === "overview" && (
+      <Section heading="This week at a glance" id="glance">
+        <Text>{`Chotu added ${S.new_this_week} games since Monday, and the open waves to move on now are loop/conveyor, rotate and sand physics.`}</Text>
+        <Metrics metrics={[
+          { value: String(S.tracked), label: "Games tracked", detail: `${S.st_matched} with Sensor Tower growth data` },
+          { value: String(S.new_this_week), label: "New this week", detail: `Added by Chotu since Mon ${fmtDate(DATA.weekStart).replace(" 2026", "")}` },
+          { value: `${S.avg_overall.toFixed(1)}/10`, label: "Average Pintu score", detail: `Median ${S.median_overall.toFixed(1)}` },
+          ...(tm ? [{ value: fmtG(tm.dlGrowth), label: "Top mover", detail: `${tm.name}, downloads vs prior 30 days` }] : []),
+        ]} />
+        <Callout lead="Takeaway">Jam, sort, yarn and screw games still produce new hits, but Pintu marks those waves saturated. Loop/conveyor, rotate and sand physics pair 8+ hooks with waves that are still open, and all three are cheap tap or drag builds.</Callout>
+        <Grid columns={2}>
+          <Section heading="Games added per day">
+            <Columns points={dayCols} emphasis={dayCols.length - 1} />
+          </Section>
+          <Section heading="Data confidence">
+            <Pie parts={[
+              { label: "High (Sensor Tower)", value: S.confidence.high ?? 0, display: `${S.confidence.high ?? 0} games` },
+              { label: "Medium (public signals)", value: S.confidence.medium ?? 0, display: `${S.confidence.medium ?? 0} games` },
+              { label: "Low (judgement only)", value: S.confidence.low ?? 0, display: `${S.confidence.low ?? 0} games` },
+            ]} total={S.tracked} label="games" />
+          </Section>
+        </Grid>
+      </Section>
+      )}
+
+      {tab === "new" && (
+      <Section heading="1. New games worth investigating" id="new" caption={`Released ${R.new_max_age} days ago or less, Pintu score ${R.new_min_overall.toFixed(1)}+ and hook ${R.new_min_hook.toFixed(1)}+, ranked by score.`}>
+        {cardsFor(DATA.buckets.new, (c: Card) => c.ratedOn ? `Found by Chotu on ${fmtDate(c.ratedOn)}${c.themeIdeas ? `. Theme angle: ${c.themeIdeas}.` : "."}` : undefined)}
+      </Section>
+      )}
+
+      {tab === "up" && (
+      <Section heading="2. Up-and-coming games making waves" id="up" caption={`Market momentum ${R.up_min_momentum.toFixed(1)}+ with mid market size (${R.up_size[0].toFixed(1)} to ${R.up_size[1].toFixed(1)}), ranked by momentum.`}>
+        {cardsFor(DATA.buckets.up, (c: Card) => c.themeIdeas ? `Theme angle: ${c.themeIdeas}.` : undefined)}
+      </Section>
+      )}
+
+      {tab === "genre" && (
+      <Section heading="3. Bigger games opening new genres" id="genre" caption={`Hybrid-casual games with a real twist that are performing: an open trend (Pintu stage ${R.ng_min_wave}+, not saturated) or a mashup scoring ${R.ng_min_mashup}+, plus strong performance. Classic-casual mega-titles are left out (match-3 only with a genuine twist); one game per genre, ranked by Pintu score.`}>
+        {cardsFor(DATA.buckets.newGenre, (c: Card) => c.unique ? `What's unique: ${c.unique}` : undefined)}
+      </Section>
+      )}
+
+      {tab === "overview" && (
+      <Section heading="Golu's picks to prototype" id="picks">
+        <Grid columns={3}>
+          {DATA.picks.map((id: string, i: number) => { const c = DATA.cards[id]; return c ? <PickCard key={id} c={c} n={i + 1} why={PICK_WHY[id] ?? [c.why ?? ""]} /> : null; })}
+        </Grid>
+        <Text>Picked from the New and Up-and-coming buckets: best Pintu score per mechanic family, only where the family's wave is still open.</Text>
+      </Section>
+      )}
+
+      {tab === "charts" && (<>
+      <Section heading="Market map" id="map" caption="Each dot is one game: market momentum against market size, both Pintu v2 pillars on a 1 to 10 scale.">
+        <Scatter points={scatterSorted} x={{ name: "Market momentum", floor: 0, ceiling: 10 }} y={{ name: "Market size", floor: 0, ceiling: 10 }} />
+      </Section>
+
+      <Section heading="Top rated and score spread" id="scores">
+        <Grid columns={2}>
+          <Section heading="Top 10 by Pintu score">
+            <Bars bars={top10.map((r: RowT) => ({ label: r[0], value: r[2], display: r[2].toFixed(1), meta: r[6] }))} emphasis={0} />
+          </Section>
+          <Section heading="Score distribution, all games">
+            <Columns points={bins.map((b) => ({ label: b.label, value: b.value, display: String(b.value) }))} emphasis="none" />
+          </Section>
+        </Grid>
+      </Section>
+
+      <Section heading="Genre and mechanic mix" id="mix">
+        <Grid columns={2}>
+          <Section heading="Top 12 mechanic families">
+            <Bars bars={famBars} emphasis="none" />
+          </Section>
+          <Section heading="Where Chotu finds games">
+            <Pie parts={[
+              { label: "Mobile stores", value: platCounts.mobile, display: `${platCounts.mobile} games` },
+              { label: "Web portals (CrazyGames, Poki)", value: platCounts.web, display: `${platCounts.web} games` },
+              { label: "itch.io", value: platCounts.itch, display: `${platCounts.itch} games` },
+            ]} total={S.tracked} label="games" />
+          </Section>
+        </Grid>
+      </Section>
+      </>)}
+
+      {tab === "trends" && (
+      <Section heading="Trending mechanics and themes" id="trending" caption={`Across the ${DATA.trending.rising_count} rising games with market momentum ${R.up_min_momentum.toFixed(1)} or more.`}>
+        <Grid columns={2}>
+          <Section heading="Rising mechanic families">
+            <Table
+              columns={["Family", "Games", "Avg momentum", "Wave"]}
+              align={["start", "end", "end", "end"]}
+              rows={DATA.trending.families.map(([f, n, m, sat]) => [f, String(n), m.toFixed(1), sat === false ? { text: "Open", tone: "success" as const } : sat ? { text: "Saturated", tone: "warning" as const } : ""])}
+            />
+          </Section>
+          <Section heading="Input styles of rising games">
+            <Bars bars={DATA.trending.inputs.map(([label, n]) => ({ label, value: n, display: String(n) }))} emphasis={0} />
+          </Section>
+        </Grid>
+        <Section heading="Theme angles from Pintu">
+          <Rows rows={DATA.trending.themes.map(([game, idea, score]) => ({ title: idea, detail: game, meta: score !== null ? `Theme ${score}/10` : undefined }))} />
+        </Section>
+      </Section>
+      )}
+
+      {tab === "all" && (
+      <Section heading="All tracked games" id="all">
+        <Segmented<BucketF>
+          value={bf}
+          onChange={(v: BucketF) => setBf(v)}
+          options={[
+            { value: "all", label: "All", count: rows.length },
+            { value: "N", label: "New", count: count("N") },
+            { value: "U", label: "Up-and-coming", count: count("U") },
+            { value: "G", label: "New genre", count: count("G") },
+          ]}
+        />
+        <Grid columns={3} plain>
+          <Select<SortK> label="Sort by" value={sort} onChange={(v: SortK) => setSort(v)} options={[
+            { value: "score", label: "Pintu score" }, { value: "momentum", label: "Market momentum" }, { value: "size", label: "Market size" },
+            { value: "hook", label: "Hook" }, { value: "dl", label: "Downloads (30d)" }, { value: "growth", label: "Download growth" }, { value: "found", label: "Newest found" },
+          ]} />
+          <Select<PlatK> label="Source" value={plat} onChange={(v: PlatK) => setPlat(v)} options={[
+            { value: "all", label: "All sources" }, { value: "mobile", label: "Mobile stores" }, { value: "web", label: "Web portals" }, { value: "itch", label: "itch.io" },
+          ]} />
+          <Input label="Search" value={q} onChange={(v: string) => setQ(v)} placeholder="Game or mechanic" />
+        </Grid>
+        <Table
+          columns={["Game", "Platform", "Score", "Momentum", "Size", "Hook", "Mechanic", "DL 30d", "Growth", "Found"]}
+          align={["start", "start", "end", "end", "end", "end", "start", "end", "end", "end"]}
+          emphasis={2}
+          rows={view.map((r: RowT) => [r[0], r[1], r[2].toFixed(1), r[3].toFixed(1), r[4].toFixed(1), r[5].toFixed(1), r[6], r[8] === null ? "" : fmtN(r[8]), r[9] === null ? "" : fmtG(r[9]), fmtMD(r[7])])}
+        />
+        <Text>{`Showing ${view.length} of ${rows.length} games. Downloads and growth come from Sensor Tower where matched; web and itch.io games have no download data.`}</Text>
+      </Section>
+      )}
+
+      {tab === "method" && (
+      <Section heading="Methodology" id="method">
+        <Properties items={[
+          { label: "Rubric", value: "Pintu v2 (18 Nov 2026): momentum 25, staying power 10, market size 15, hook and core loop 20 (half input simplicity), monetisation 10, theme 10, feasibility 10, plus mashup 10 when 2+ mechanics (others x0.9)." },
+          { label: "Caps", value: "Distinct tap plus swipe or 3+ input types cap the score at 5.0; a mashup score of 4 or below caps it at 6.0. Drag-to-merge is not capped (Anurag's 18 Nov ruling)." },
+          { label: "Confidence", value: `High: Sensor Tower growth export (${S.confidence.high ?? 0} games). Medium: public store or portal signals (${S.confidence.medium ?? 0}). Low: judgement only (${S.confidence.low ?? 0}).` },
+          { label: "Buckets", value: `New: age ${R.new_max_age} days or less, score ${R.new_min_overall.toFixed(1)}+, hook ${R.new_min_hook.toFixed(1)}+. Up-and-coming: momentum ${R.up_min_momentum.toFixed(1)}+, size ${R.up_size[0].toFixed(1)} to ${R.up_size[1].toFixed(1)}. New genre: novelty (an unsaturated trend at Pintu stage ${R.ng_min_wave}+, or a mashup scoring ${R.ng_min_mashup}+) and performance (momentum ${R.ng_min_momentum}+, or 1M+ downloads growing 20%+, or 5M+ downloads, or $5M+ store revenue in 30 days) and hybrid-casual fit (no input cap, score ${R.ng_min_overall.toFixed(1)}+, hook ${R.ng_min_hook.toFixed(1)}+, feasibility ${R.ng_min_feas}+, not itch.io), one per genre; a genre already in New or Up-and-coming only via a mashup. A game sits in one bucket only.` },
+          { label: "Left out as classic casual", value: `${R.ng_casual.join(", ")}. These genres are mega-title or classic-casual territory rather than hybrid-casual, so they never enter the new-genre bucket.` },
+          { label: "Match-3 exception", value: "Match-3 games (classic, with meta, or PvP) can enter only with a genuine twist that passes the same twist, performance and hybrid-casual fit tests. The genre's standard decorate/build meta does not count as a mashup twist, so Candy Crush, Royal Match and Gardenscapes-style games stay out. As of 18 Nov none of the 10 tracked match-3 games qualifies: all have feasibility 2 to 3 and trends Pintu marks saturated at stage 2 to 3." },
+          { label: "Dates", value: "\"Found\" is the day Chotu's find entered Pintu's ratings; Chotu's first batch on 13 Nov included the backlog. Age is days since release, per Pintu." },
+          { label: "Refresh", value: "`python3 /workspace/golu-studio/scripts/moodboard-data.py` rebuilds every number on this page from the latest bot files each week." },
+        ]} />
+      </Section>
+      )}
+    </Page>
+  );
+}
+
+
+</cursor_untrusted_data_1337>

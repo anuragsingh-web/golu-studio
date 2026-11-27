@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Golu Studio — nightly games</title>
+<meta name="description" content="Playable HTML5 games the Golu Studio autopilot kept. Scored with Pintu's rubric.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%237b6cff'/><text x='32' y='46' font-size='38' text-anchor='middle' fill='white' font-family='Arial' font-weight='900'>G</text></svg>">
+<link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+<div class="glow"></div>
+<header class="top">
+  <div class="brand">
+    <div class="mark" aria-hidden="true">G</div>
+    <div>
+      <div class="name">Golu Studio</div>
+      <div class="sub">Nightly gallery</div>
+    </div>
+  </div>
+  <p class="lede" id="lede">Playable games the autopilot kept. Newest first.</p>
+</header>
+
+<main>
+  <div class="toolbar" id="toolbar" hidden>
+    <label>Sort
+      <select id="sort">
+        <option value="new">Newest</option>
+        <option value="old">Oldest</option>
+        <option value="score">Highest score</option>
+        <option value="scoreAsc">Lowest score</option>
+      </select>
+    </label>
+    <label class="score-label">Min score <b id="minLabel">0</b>
+      <input id="min" type="range" min="0" max="10" step="0.1" value="0">
+    </label>
+    <label>Night
+      <select id="night"><option value="">All nights</option></select>
+    </label>
+    <p class="showing" id="showing"></p>
+  </div>
+  <div id="list" class="list"></div>
+</main>
+<script src="gallery.js"></script>
+</body>
+</html>

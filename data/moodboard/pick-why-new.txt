@@ -1,0 +1,5 @@
+  "ios:6786206777": [
+    "3D cube family at wave stage 5 and not saturated: an early window for a twist.",
+    "Downloads +220% to 602K and $1.0M store revenue in 30 days, DAU 48.7K (+212%), only 132 days old. Hook 9/10, tap-only simple input, feasibility 6/10.",
+    "Theme ideas: toys, animals, food sculptures, holiday models (gingerbread, snowmen).",
+  ],
