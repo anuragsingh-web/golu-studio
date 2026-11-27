@@ -8,5 +8,6 @@ data/*.prev.json
 *.tar.gz
 data/rated-games/
 data/rated_games.json
-# Local Create H5 builds from `npm start`. Kept nightly games live in gallery/games/.
-games/
+# Local Create H5 builds from `npm start` (repo root only).
+# Kept nightly games live in gallery/games/ and must stay tracked.
+/games/
